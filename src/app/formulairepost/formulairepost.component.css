@@ -1,0 +1,301 @@
+.container{
+  position: relative;
+
+
+
+  background-color: #fff;
+
+  transform: translateY(10%);
+}
+
+.container header{
+  color:hsl(236, 57%, 28%);
+  font-size: 3.2rem;
+  margin-block-end: 60px;
+  max-width: max-content;
+  margin-inline: auto;
+  position: relative;transform: translateY(50%);
+}
+.container header::before{
+  content: "";
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    height: 6px;
+    background-image: linear-gradient(90deg, hsl(335, 87%, 51%),hsl(29, 99%, 67%));
+    border-radius: 10px;
+}
+.container form{
+ position: relative;
+  margin-top: 16px;
+  min-height: 1090px;
+  background-color: #fff;
+  overflow: hidden;
+  margin-bottom: 50px;
+}
+.container form .form{
+  position: absolute;
+  background-color: #fff;
+  transition: 0.3s ease;
+}
+.container form .form.second{
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(100%);
+}
+form.secActive .form.second{
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(0);
+}
+form.secActive .form.first{
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-100%);
+}
+.container form .title{
+  display: block;
+  margin-bottom: 8px;
+  margin-top: 15px;
+  font-size: 26px;
+  font-weight: 700;
+  margin: 6px 0;
+  color: rgb(104, 99, 99);
+}
+.container form .fields{
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+form .fields .input-field{
+  display: flex;
+  width: calc(100% / 3 - 15px);
+  flex-direction: column;
+  margin: 4px 0;
+}
+.input-field label{
+  font-size: 18px;
+  font-weight: 600;
+  color: #2e2e2e;
+}
+.input-field input, select{
+  outline: none;
+  font-size: 14px;
+  font-weight: 400;
+  color: #333;
+  border-radius: 5px;
+  border: 1px solid #aaa;
+  padding: 0 15px;
+  height: 42px;
+  margin: 8px 0;
+}
+.input-field input :focus,
+.input-field select:focus{
+  box-shadow: 0 3px 6px rgba(143, 142, 142, 0.13);
+}
+
+.btn{
+  margin-top: 20px;
+    display: inline-block;
+    padding:13px 30px;
+    border:1px solid #FF5360;
+    color:#ff5360;
+    font-size: 16px;
+    background-color: #fff;
+    cursor: pointer;
+    margin-bottom: 50px;
+    transform: translate(500%,-140%);
+}
+
+.btn:hover{
+  background-color: crimson;
+  border-color: crimson;
+  color:#fff;
+}
+.load-more,.down{
+  margin-top: 20px;
+    display: inline-block;
+    padding:13px 30px;
+    border:1px solid #FF5360;
+    color:#ff5360;
+    font-size: 16px;
+    background-color: #fff;
+    cursor: pointer;
+    margin-bottom: 50px;
+    transform: translate(300%,-50%);
+}
+.container.popup-card .info{
+  z-index: 2;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  width: 55%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 40px;
+  border-radius: 10px;
+
+}
+
+.container .popup-card .close-btn{
+  color: rgb(73, 70, 70);
+  z-index: 3;
+  position: absolute;
+  right: 0;
+  font-size: 20px;
+  margin: 20px;
+  cursor: pointer;
+
+}
+
+.container .popup-card .info h2{
+  font-size: 40px;
+  line-height: 20px;
+  margin-top: 30px;
+  margin-bottom: 30px;margin-left: 40px;
+}
+.container .popup-card .info p{
+  font-size: 20px;
+  line-height: 30px;
+  margin-top: 30px;
+  margin-bottom: 30px;margin-left: 40px;margin-right: 10px;
+}
+ .popup-view{
+  z-index: 2;
+  background: rgba(112, 106, 101, 0.274);
+  border-color: #334;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.5s;
+}
+
+ .popup-view.active{
+  opacity: 1;
+  visibility: visible;
+}
+
+ .popup-card{
+  position: relative;
+  display: flex;
+  background-color: #fff;
+  border-radius: 30px;
+  width: 800px;
+  height: 500px;
+  margin: 20px;
+}
+a{text-decoration: none}
+.down:hover,.load-more:hover{
+  background-color: crimson;
+  border-color: crimson;
+  color:#fff;
+}
+.btn1{
+border:none;
+color:rgb(82, 82, 250);
+background-color: transparent;
+}
+#r{ transform: translate(110%,140%);}
+#remember{
+  margin-bottom: 80px;
+  margin-top: 20px;
+  font-size: 20px;
+  color:#607d8b;
+
+font-weight: 400;
+}
+.ng-invalid.ng.touched{
+  border-color: red;
+}
+.alert-danger {
+  outline: none;
+      display: inline-block;
+transform: translateX(80%);
+      width: 90%;
+      padding: 10px 20px;
+      font-weight: 400;
+      border: 1px solid transparent;
+      letter-spacing: 1px;
+      background: transparent;
+      color:red;
+      border-radius: 30px;
+      font-size: 16px;
+      border-bottom-width: 2px;
+      transition: all 0.3s ease;
+}
+.alert-danger1 {
+  outline: none;
+      display: inline-block;
+transform: translate(50%,-110%);
+      width: 90%;
+      padding: 10px 20px;
+      font-weight: 400;
+      border: 1px solid transparent;
+      letter-spacing: 1px;
+      background: transparent;
+      color:red;
+      border-radius: 30px;
+      font-size: 16px;
+      border-bottom-width: 2px;
+      transition: all 0.3s ease;
+}
+.alert-danger1 {
+  outline: none;
+      display: inline-block;
+transform: translate(80%,-110%);
+      width: 90%;
+      padding: 10px 20px;
+      font-weight: 400;
+      border: 1px solid transparent;
+      letter-spacing: 1px;
+      background: transparent;
+      color:red;
+      border-radius: 30px;
+      font-size: 16px;
+      border-bottom-width: 2px;
+      transition: all 0.3s ease;
+}
+@media (max-width: 750px) {
+  .container form{
+     height: 1190px;
+  }
+  .container form::-webkit-scrollbar{
+     display: none;
+  }
+  form .fields .input-field{
+      width: calc(100% / 2 - 15px);
+  }
+  .load-more{
+    transform:translate(-10%,50%)
+  }
+  .alert-danger{
+    transform: translateX(-1%);
+  }
+  .alert-danger1 {
+    transform: translateX(-1%);
+  }
+  .down{transform: translateX(30%);}
+.btn{transform: translate(100%,10%);}
+#remeber{transform: translateY(300%);}
+
+#r{font-size: 15px;transform: translateY(130%);}
+.container .popup-card .info h2{font-size: 23px;font-weight: 600;}
+}
+
+@media (max-width: 550px) {
+  form .fields .input-field{
+    width: 100%;
+
+}
+}

@@ -1,0 +1,141 @@
+<div class="container">
+  <header>Apply now</header>
+ <button class="btn" (click)="onDescrip()"> View Description</button>
+  <form [formGroup]="ApplyForm">
+      <div class="form first">
+          <div class="details personal">
+              <span class="title">Personal Informations</span>
+
+              <div class="fields">
+                  <div class="input-field">
+                      <label>First Name</label>
+                      <input type="text" formControlName="firstname"  class="form-control" id="firstname" placeholder="Enter your first name" required>
+                  </div>
+
+
+                  <div class="input-field">
+                    <label>Last Name</label>
+                    <input type="text"formControlName="lastname"  class="form-control" id="lastname" placeholder="Enter your last name" required>
+                </div>
+
+
+
+
+                  <div class="input-field">
+                      <label>Email</label>
+                      <input type="text"  formControlName="email"  class="form-control" id="email" placeholder="Enter your email" required>
+                  </div>
+                  <div class="alert-danger" role="alert"  *ngIf="ApplyForm.controls['email']?.errors">
+                    E-mail is required
+
+                </div>
+                  <div class="alert-danger" role="alert"  *ngIf="ApplyForm.controls['email']?.errors?.['email']">
+                    Invalid E-mail
+
+                </div>
+                  <div class="input-field">
+                      <label>Phone</label>
+                      <input type="number" formControlName="phone"  class="form-control" id="phone" placeholder="Enter mobile number" required min-length="8">
+                  </div>
+
+                <div class="alert-danger1" role="alert"  *ngIf="ApplyForm.controls['phone']?.errors" >
+                    Phone is required
+
+                  </div>
+                  <div class="input-field">
+                    <label>Town</label>
+                    <input type="text" formControlName="town"  class="form-control" id="town" placeholder="Enter your Town" required>
+                </div>
+                <div class="input-field">
+                  <label>Postal code </label>
+                  <input type="number" formControlName="postal"  class="form-control" id="postal" placeholder="Enter your postal code" required max-length="4">
+              </div>
+              <div class="alert-danger" role="alert"  *ngIf="ApplyForm.controls['postal'].errors">
+                the postal code must be 4 numbers
+
+            </div>
+
+            </div> </div>
+
+
+
+          <div class="details ID">
+              <span class="title">Employment Details</span>
+
+              <div class="fields">
+                <div class="input-field">
+                  <label>Current Company</label>
+                  <input type="text" placeholder="Enter your current company" required>
+              </div>
+
+                  <div class="input-field">
+                      <label>Current  Job</label>
+                      <input type="text" placeholder="Enter your current job" required>
+                  </div>
+                </div> </div>
+                <div class="candidacy">
+                  <span class="title">Candidacy</span>
+                  <div class="input-field">
+                  <label>CV</label>
+                  <button class="down"  >Download File</button>
+
+                </div></div>
+                  <div class="reseau">
+                    <span class="title">Social Media</span>
+
+                    <div class="fields">
+                      <div class="input-field">
+                        <label>Linkedin profile</label>
+                        <input type="link"  formControlName="profile"  class="form-control" id="profile" placeholder="Enter your Linkedin profile Link" required>
+                    </div>
+                    <div class="alert-danger1" role="alert"  *ngIf="ApplyForm.controls['profile']?.errors" >
+                     Linkedin Profile is required
+
+                    </div></div>
+                    <form [formGroup]="ApplyForm" >
+                      <div class="form-group form-check" id="remember">
+                          <input type="checkbox" formControlName="check" id="check" class="form-check-input" [ngClass]="{ 'is-invalid': submitted && f['check'].errors }" />
+                          <label for="acceptTerms" class="form-check-label">I agree to <button (click)="onClick()" class="btn1"> Candidate Terms</button></label>
+                          <div *ngIf="submitted && f['check'].errors" class="invalid-feedback">Please Check Candidate Terms To Proceed.
+                          </div>
+                      </div> </form>
+
+                    <div class="popup-view">
+                      <div class="popup-card">
+                        <a><i class="fas fa-times close-btn"></i></a>
+                        <div class="info">
+
+                          <h2>Candidate Terms</h2>
+                          <p>Your Recruitment Partner La Relve will be storing your data in Recruit CRM to manage your information and send your profile to companies to present you for potential job Opportunities.
+                            Recruit CRM is a software system that helps recruitment firms manage their relationship with their clients. You can view <a href="https://recruitcrm.io/">Recruit CRM</a>s  <a href="https://recruitcrm.io/fr/legal/privacy">privacy policy</a>  or <a href="https://recruitcrm.io/fr/legal/gdpr">GDPR</a>  commitment on our website.
+                            Recruit CRM may store your data in a Data Centre inside or outside Europe.
+                            You can ask your recruiter at any point to delete your data or simply ask them for an “Update resume link” which you can use to update your profile information/resume or simply delete your data from their system.  </p>
+
+
+
+                        </div>
+                      </div>
+                    </div>
+
+                </div> </div>
+              </form>
+
+              <button class="load-more" (click)="onPostule()" >
+               Hey I'm Applying ! </button>
+               <label class="form-check-label" id="r">View our <button (click)="onClick()" class="btn1"> Equal Employment Opportunity Policy</button></label>
+            <div class="popup-view">
+                 <div class="popup-card">
+                   <a><i class="fas fa-times close-btn"></i></a>
+                   <div class="info">
+
+                     <h2>
+                       Equal Employment Opportunity Policy</h2>
+                     <p>Our company and our clients do not discriminate in employment on the basis of race, color, religion, sex (including pregnancy and gender identity), national origin, political affiliation, sexual orientation, marital status, disability, genetic information, age, membership in an employee organization, retaliation, parental status, military service, or other non-merit factors.  </p>
+
+
+
+                   </div>
+                 </div>
+               </div>
+
+</div>

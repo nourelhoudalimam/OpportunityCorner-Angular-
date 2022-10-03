@@ -1,0 +1,43 @@
+<section>
+
+    <div class="imgbox">
+        <img class="w-100 banner-animation" [src]="write" >
+    </div>
+
+    <div class="right">
+        <div class="contact-box">
+            <h2>Create an Offer</h2>
+            <form action="#" [formGroup]="form"  >
+              <div class="inputbox">
+            <span>Name of Company</span>  <input   formControlName="company"   type="text"  class="field" name="company"    id="company" placeholder="Enter your Name of Company" required  ></div>
+            <div class="alert-danger" role="alert"  *ngIf="form.controls['company']?.errors?.['required']" >
+             The name is required
+
+            </div>
+            <div class="inputbox">
+                <span>Post</span>  <input   formControlName="post" type="text"  class="field" name="post"      id="post" placeholder="Enter the post" required  ></div>
+                <div class="alert-danger" id="1" role="alert"  *ngIf="form.controls['post']?.errors?.['required']" >
+                Post is required
+
+                </div>
+
+
+
+
+            <div class="inputbox"><span>Description</span>  <textarea   formControlName="description"placeholder="Message"  id="description" required class="field"></textarea></div>
+            <div class="alert-danger" role="alert"  *ngIf="form.controls['description']?.errors?.['required'] " >
+           Message is required
+
+            </div>
+
+            <div class="inputbox">
+
+              <button class="submit" (click)="onCreateOffer()">Publish</button>
+          </div>
+        <!--       <div class="alert-danger" role="alert"  *ngIf="ContactForm.invalid && !ContactForm.pristine">
+               Errors occured during publish
+
+        </div>--></form>
+          </div>
+      </div>
+      </section>

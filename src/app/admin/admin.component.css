@@ -1,0 +1,116 @@
+html{
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-padding-top: 7rem;
+  scroll-behavior: smooth;
+}
+
+section{
+  padding:2rem 9%;
+  transform: translateY(10%);
+  margin-bottom: 100px;
+}
+
+
+
+
+
+
+.right {
+  padding: 40px 48px;
+
+}
+.title h2 span {font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #7b7676;
+  font-size: 30px;
+  width: 100%;
+  font-weight:bolder;
+  margin-bottom: 20px;
+}
+.sstitle h3
+{color: #45759f;
+  font-size: 25px;
+  width: 100%;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  font-weight:italic;
+  margin-bottom: 20px;
+
+}
+.w-100 { width:100%;
+}
+
+.banner-animation { animation: waveAnim 2s linear infinite alternate; }
+
+@keyframes waveAnim {
+0% { transform: translate(0, 0) rotate(0); }
+100% { transform: translate(2px, 2px) rotate(1deg); }
+}
+.msg {font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: #392e2e;
+  font:message-box;
+font-size: 20px;
+  line-height: 32px;
+  margin-bottom: 2px;
+
+
+}
+.cta
+    {
+        margin-top: 20px;
+        display: flex;
+         }
+.cta li {
+            list-style: none;
+         }
+         .cta li button
+{
+    border: none;
+    outline: none;
+    background-color: #ff5360;
+    color: #fff;
+    padding: 18px 32px;
+    font-weight: bold;
+
+    letter-spacing: 3px;
+    margin-right: 50px;
+    border-radius: 30px;
+
+    cursor: pointer;
+    transition: opacity 0.9;
+}
+.cta li button:hover {
+    opacity: 0.9;
+    background-color: #e62031;
+}
+@media (max-width:768px) {
+
+  section {
+      padding-left:100px;
+      padding-right: 100px;
+  }
+}
+@media (max-width: 991px) {
+
+  section{
+      padding:2rem;
+      transform: translateY(20%);
+  }
+  html{
+      font-size: 55%;
+  }
+
+  button.cta {
+      max-width: 60%;
+      font-size: 15px;
+  }
+
+
+}
+@media (max-width:450px){
+
+  html{
+      font-size: 55%
+  }
+}
+

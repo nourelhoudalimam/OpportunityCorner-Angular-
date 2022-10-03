@@ -1,0 +1,122 @@
+<section>
+
+  <div class="imgbox">
+      <img class="w-100 banner-animation" [src]="ev"  >
+  </div>
+
+  <div class="right">
+      <div class="contact-box">
+          <h2>Add event</h2>
+          <form action="#" [formGroup]="evform" >
+            <div class="inputbox">
+          <span>Title</span>  <input  formControlName="titre"   type="text"  class="field" name="company"    id="titre" placeholder="Enter theTitle of events " required  ></div>
+          <div class="alert-danger" role="alert"  *ngIf="evform.controls['titre']?.errors?.['required']" >
+         Title is required
+
+          </div>
+          <div class="inputbox">
+              <span>Organisator</span>  <input  formControlName="orga" type="text"  class="field" name="orga"      id="orga" placeholder="Enter the organisator" required  ></div>
+              <div class="alert-danger" id="1" role="alert"  *ngIf="evform.controls['orga']?.errors?.['required']" >
+             Organisator is required
+
+              </div>
+              <div class="inputbox">
+                <span>Location</span>  <input  formControlName="lieu" type="text"  class="field" name="lieu"      id="lieu" placeholder="Enter the Location" required  ></div>
+                <div class="alert-danger" id="1" role="alert"  *ngIf="evform.controls['lieu']?.errors?.['required']" >
+          Location is required
+
+                </div>
+                <div class="inputbox">
+                  <span>Date of the Event</span>  <input   formControlName="devent" type="date"  class="field" name="devent"      id="devent" placeholder="Enter the Date of the event" required  ></div>
+                  <div class="alert-danger" id="1" role="alert"  *ngIf="evform.controls['devent']?.errors?.['required']" >
+               The date is required
+
+                  </div>
+
+                  <div class="inputbox"><span>Description</span>  <textarea  formControlName="Description1" placeholder="Description"  id="Description1" required class="field"></textarea></div>
+                  <div class="alert-danger" role="alert"  *ngIf="evform.controls['Description1']?.errors?.['required'] " >
+               Description is required
+
+                  </div>
+
+
+                  <div class="inputbox">
+                    <span>Number of Type Event</span>  <input  formControlName="typeev" type="number"  class="field" name="typeev"      id="typeev" placeholder="Enter the Type number" required  ></div>
+                    <div class="alert-danger" id="1" role="alert"  *ngIf="evform.controls['typeev']?.errors?.['required']" >
+                  The type is required
+<ol>
+  <li>Forum</li>
+  <li>Seminar</li>
+  <li>Team Building</li>
+  <li>Festival</li> <li>Conference</li> <li>Sport Event</li>
+</ol>
+                    </div>
+
+          <div class="inputbox">
+
+            <button class="submit" >Add</button>
+        </div>
+      <!--       <div class="alert-danger" role="alert"  *ngIf="ContactForm.invalid && !ContactForm.pristine">
+             Errors occured during publish
+
+      </div>--></form>
+        </div>
+    </div>
+    </section>
+    <div class="sstitle1">
+      <p> Your List of Events</p>
+    </div>
+
+    <table class="table" id="table">
+      <thead class="thead-dark">
+        <tr>
+
+          <th scope="col" id="post">Title</th>
+          <th scope="col" id="company">Organisator</th>
+          <th scope="col" id="location">Date of event</th>
+          <th scope="col" id="Description">Location</th>
+
+          <th scope="col" id="action">Details</th>
+          <th scope="col" id="location">Actions</th>
+        </tr>
+      </thead>
+    <tbody class="tbody">
+
+      <tr *ngFor="let obj of us" >
+        <td><i class="fa fa-user"></i>{{obj.titre}}</td>
+        <td><i class="fa fa-building"></i>{{obj.orga}}</td>
+
+        <td><i class="fa fa-calendar"></i>{{obj.devent}}</td>
+        <td><i class="fa fa-map-marker"></i>{{obj.lieu}}</td>
+
+        <td> <a  class="btn1" (click)="onClick()" >View Description</a></td>
+        <td>
+          <button class="btn btn-danger " (click)="Remove(obj.idev)"  >Delete</button> </td>
+          <div class="popup-view">
+            <div class="popup-card">
+              <a><i class="fas fa-times close-btn"></i></a>
+              <div class="info">
+
+                <h2>About {{obj.titre}}</h2>
+                <p>{{obj.descripton1}} </p>
+
+              </div>
+
+              </div>
+            </div>
+      </tr>
+
+    </tbody>
+  </table>
+
+
+
+
+
+    <button class="load-more" (click)="onLoad()"  >
+      Load More  </button>
+
+
+
+
+

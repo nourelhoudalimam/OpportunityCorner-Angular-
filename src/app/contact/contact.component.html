@@ -1,0 +1,51 @@
+<section>
+    
+        <div class="imgbox">
+            <img class="w-100 banner-animation" [src]="contact" alt="contact image">
+        </div>
+
+        <div class="right">
+          <div class="contact-box">
+              <h2>Contact Us</h2>
+              <form action="#" #ContactForm="ngForm">
+                <div class="inputbox">
+              <span>Full name</span>  <input   type="text"  class="field" name="post"     [(ngModel)]="form.fullname" id="fullname" placeholder="Enter your Full Name" required #fName="ngModel" ></div>
+              <div class="alert-danger" role="alert"  *ngIf="fName?.errors?.['required'] && !ContactForm.pristine" >
+               Full name is required
+  
+              </div>
+                <div class="inputbox">
+                    <span>Email</span>  <input  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" type="text"  class="field" name="name" [(ngModel)]="form.email" id="email" placeholder="Enter your email" required #eName="ngModel"     ></div>
+                  
+            <div class="alert-danger" role="alert"  *ngIf="eName?.errors?.['pattern']">
+                Invalid E-mail
+        
+            </div>
+            <div class="inputbox">
+              <span > Phone</span>
+            <input type="number" placeholder="Enter your Phone Number" minlength="8"  id="phone" [(ngModel)]="form.phone" #phName="ngModel" required>
+          </div>
+          <div class="alert-danger" role="alert"  *ngIf="phName?.errors?.['required'] && !ContactForm.pristine" >
+              Phone number is required
+
+            </div>
+      
+        
+         
+              <div class="inputbox"><span>Description</span>  <textarea placeholder="Message"  [(ngModel)]="form.message" #mName="ngModel" required class="field"></textarea></div>
+              <div class="alert-danger" role="alert"  *ngIf="mName?.errors?.['required'] && !ContactForm.pristine" >
+             Message is required
+  
+              </div>
+        
+              <div class="inputbox">
+                        
+                <button class="submit" (click)="onSend()" >Send</button>
+            </div>
+            <div class="alert-danger" role="alert"  *ngIf="ContactForm.invalid && !ContactForm.pristine">
+              Errors occured during send
+  
+          </div></form>
+            </div>
+        </div>
+        </section>

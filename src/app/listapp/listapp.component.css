@@ -1,0 +1,149 @@
+.sstitle1{
+    color:hsl(236, 57%, 28%);
+  font-size: 3.2rem;
+  margin-block-end: 60px;
+  max-width: max-content;
+  margin-inline: auto;
+  position: relative;transform: translateY(50%);
+  }
+  .load-more{
+   margin-top: 20px;
+   display: inline-block;
+   padding:13px 30px;
+   border:1px solid #FF5360;
+   color:#ff5360;
+   font-size: 16px;
+   background-color: #fff;
+   cursor: pointer;
+   transform: translateX(450%);
+ }
+ .btn{
+   display: inline-block;
+   padding:10px 30px;
+   border:1px solid #FF5360;
+   color:#FF5360;
+   font-size: 16px;
+ }
+ 
+ 
+.btn:hover{
+   background-color: crimson;
+   border-color: crimson;
+   color:#fff;}
+ 
+ .load-more:hover{
+   background-color: crimson;
+   border-color: crimson;
+   color:#fff;
+ }
+  .table th{
+    font-weight: bolder;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 25px;
+    color:#333
+}
+.table{
+    transform: translateY(150%);
+    margin-bottom: 550px;
+    color:#555
+}
+.table td{
+    font-size: 20px;
+}
+.table td i{
+    margin-right: 10px;
+    color:#111;
+}
+ .sstitle1::before{
+
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    height: 6px;
+    background-image: linear-gradient(90deg, hsl(335, 87%, 51%),hsl(29, 99%, 67%));
+    border-radius: 10px;
+  
+  
+ }
+ @media(max-width:991px)
+ {.container1{
+   font-size: 0.8em;
+   transform: translateY(250%);
+}
+  
+ }
+
+.search
+{
+   background-color: #fff;
+   padding: 4px;
+   border-radius: 5px;
+   margin-bottom: 20px;
+   white-space: nowrap; 
+   transform: translateX(30%);
+  
+}
+
+
+.search-2 {
+   position: relative;
+   width: 100%;
+   
+
+}
+
+.search-2 input {
+   height: 45px;
+   border: none;
+   width: 100%;
+   padding-left: 18px;
+   padding-right: 100px;
+}
+.search-2 input:focus {
+   border-color: #999;
+   box-shadow: none;
+   outline: none;
+}
+
+.search-2 i {
+   position: absolute;
+   top: 12px;
+   left: 30px;
+   font-size: 24px;
+   color: #fff;
+}
+
+.search-2 button {
+   position: absolute;
+   right: 1px;
+   top: 0px;
+   border: none;
+   height: 45px;
+   background-color:#999;
+   color: #fff;
+   width: 90px;
+   border-radius: 4px
+}
+@media (max-width:768px) {
+   .search-1 input {
+       border-right: none;
+       border-bottom: 1px solid #eee
+   }
+
+   .search-2 i {
+       left: 4px;
+       
+   }
+
+   .search-2 input {
+       padding-left: 34px
+   }
+
+   .search-2 button {
+       height: 37px;
+       top: 5px
+   }
+}

@@ -1,0 +1,68 @@
+<div class="container1">
+  <div class="search" >
+  <div class="row">
+     <div class="col-md-6">
+       <div class="search-2">
+        <input type="text"  placeholder="Search with Sector or Type of company" (keyup)="sendData($event)">
+    <button><i class='fa fa-search' ></i></button> </div> </div> </div> </div> </div>
+    <div class="sstitle1">
+      <p> Companies</p>
+    </div>
+    <div class="container">
+
+      <div class="box-container" *ngFor="let obj of comp">
+
+        <div class="box ">
+           <div class="image">
+              <img [src]="orange" alt="">
+           </div>
+           <div class="content">
+              <h3>{{obj.nom}}</h3>
+              <p>{{obj.apropos}}</p>
+              <a  class="btn" (click)="onClick()">read more</a>
+
+           </div>
+        </div>
+        <div class="popup-view ">
+          <div class="popup-card">
+            <a><i class="fas fa-times close-btn"></i></a>
+            <div class="product-img">
+              <img [src]="orange" alt="">
+            </div>
+            <div class="info">
+              <h2>{{obj.nom}}</h2>
+              <span>{{obj.domaine}}</span>
+
+              <p> {{obj.apropos}}</p>
+
+              <i class="fa   fa-globe"> </i>  <span>{{obj.localisation}}</span>
+              <a href="obj.lien" class="add-cart-btn" >{{obj.lien}} </a>
+
+
+            </div>
+          </div>
+        </div>
+
+
+
+           </div>
+          <button class="load-more" (click)="onLoad()" >
+            Load More  </button>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

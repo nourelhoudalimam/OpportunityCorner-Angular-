@@ -1,0 +1,48 @@
+<div class="rectangle">
+  <p>Discover all our Job & internship offers</p>
+ </div>
+ <div class="container">
+
+     <table class="table">
+        <thead class="thead-dark">
+          <tr>
+
+            <th scope="col" id="post">Post</th>
+            <th scope="col" id="company">Company</th>
+            <th scope="col" id="location">Location</th>
+            <th scope="col">Description</th>
+          </tr>
+        </thead>
+        <tbody class="tbody">
+
+
+
+          <tr *ngFor="let obj of Off" >
+            <td><i class="fa fa-user"></i>{{obj.poste}}</td>
+            <td><i class="fa fa-building"></i>{{obj.company.nom}}</td>
+
+            <td><i class="fa fa-map-marker"></i>{{obj.company.localisation}}</td>
+            <td> <a  class="btn" (click)="onClick()" >View more</a></td>
+
+            <div class="popup-view">
+              <div class="popup-card">
+                <a><i class="fas fa-times close-btn"></i></a>
+                <div class="info">
+
+                  <h2>About the Offer</h2>
+                  <p>{{obj.description}} </p>
+                  <a  class="add-cart-btn" (click)="onPostule()" >Apply</a>
+                </div>
+
+                </div>
+              </div>
+            </tr>    </tbody>
+
+      </table>
+
+
+
+      <button class="load-more"  >
+        Load More  </button>
+
+      </div>

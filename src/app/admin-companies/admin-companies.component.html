@@ -1,0 +1,103 @@
+<section>
+
+  <div class="imgbox">
+      <img class="w-100 banner-animation" [src]="comp" >
+  </div>
+
+  <div class="right">
+      <div class="contact-box">
+          <h2>Add Company</h2>
+          <form action="#" [formGroup]="compform" >
+            <div class="inputbox">
+          <span>Name of the Comany</span>  <input [(ngModel)]="us.nom" formControlName="nom"   type="text"  class="field" name="nom"    id="nom" placeholder="Enter the name of the company " required  ></div>
+          <div class="alert-danger" role="alert"  *ngIf="compform.controls['nom']?.errors?.['required']" >
+         Name is required
+
+          </div>
+          <div class="inputbox">
+              <span>Area</span>  <input [(ngModel)]="us.domaine" formControlName="domaine" type="text"  class="field" name="domaine"      id="domaine" placeholder="Enter the Area" required  ></div>
+              <div class="alert-danger" id="1" role="alert"  *ngIf="compform.controls['domaine']?.errors?.['required']" >
+              Area is required
+
+              </div>
+              <div class="inputbox">
+                <span>Location</span>  <input [(ngModel)]="us.localisation" formControlName="localisation" type="text"  class="field" name="localisation"      id="localisation" placeholder="Enter the Location" required  ></div>
+                <div class="alert-danger" id="1" role="alert"  *ngIf="compform.controls['localisation']?.errors?.['required']" >
+               localisation is required
+
+                </div>
+
+                <div class="inputbox"><span>About</span>  <textarea [(ngModel)]="us.apropos" formControlName="apropos" placeholder="Description"  id="apropos" required class="field"></textarea></div>
+                <div class="alert-danger" role="alert"  *ngIf="compform.controls['apropos']?.errors?.['required'] " >
+             Description is required
+
+                </div>
+
+
+
+
+          <div class="inputbox">
+
+            <button class="submit" >Add</button>
+        </div>
+      <!--       <div class="alert-danger" role="alert"  *ngIf="ContactForm.invalid && !ContactForm.pristine">
+             Errors occured during publish
+
+      </div>--></form>
+        </div>
+    </div>
+    </section>
+    <div class="sstitle1">
+      <p> Your List of Companies</p>
+    </div>
+
+    <table class="table" id="table">
+      <thead class="thead-dark">
+        <tr>
+
+          <th scope="col" id="post">Name</th>
+          <th scope="col" id="company">Area</th>
+          <th scope="col" id="location">Place</th>
+          <th scope="col" id="location">Description</th>
+          <th scope="col" id="location">Actions</th>
+
+        </tr>
+      </thead>
+    <tbody class="tbody">
+
+      <tr *ngFor="let obj of us" >
+
+        <td><i class="fa fa-building"></i>{{obj.nom}}</td>
+        <td><i class="fa fa-star"></i>{{obj.domaine}}</td>
+        <td><i class="fa fa-map-marker"></i>{{obj.localisation}}</td>
+        <td> <a  class="btn1" (click)="onClick()" >View Description</a></td>
+        <td>
+          <button class="btn btn-danger " (click)="Remove(obj.idComp)"  >Delete</button> </td>
+          <div class="popup-view">
+            <div class="popup-card">
+              <a><i class="fas fa-times close-btn"></i></a>
+              <div class="info">
+
+                <h2>About {{obj.nom}}</h2>
+                <p>{{obj.apropos}} </p>
+
+              </div>
+
+              </div>
+            </div>
+      </tr>
+
+    </tbody>
+  </table>
+
+
+
+
+
+    <button class="load-more" (click)="onLoad()"  >
+      Load More  </button>
+
+
+
+
+

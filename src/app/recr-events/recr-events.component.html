@@ -1,0 +1,52 @@
+<div class="sstitle1">
+  <p> Your List of Events</p>
+</div>
+
+<table class="table" id="table">
+  <thead class="thead-dark">
+    <tr>
+
+      <th scope="col" id="post">Title</th>
+      <th scope="col" id="company">Organisator</th>
+      <th scope="col" id="location">Date of event</th>
+      <th scope="col" id="Description">Location</th>
+      <th scope="col" id="action">Type</th>
+      <th scope="col" id="action">Details</th>
+      <th scope="col" id="location">Actions</th>
+    </tr>
+  </thead>
+<tbody class="tbody">
+
+  <tr *ngFor="let obj of us" >
+    <td><i class="fa fa-user"></i>{{obj.titre}}</td>
+    <td><i class="fa fa-building"></i>{{obj.orga}}</td>
+
+    <td><i class="fa fa-calendar"></i>{{obj.devent}}</td>
+    <td><i class="fa fa-map-marker"></i>{{obj.lieu}}</td>
+    <td><i class="fa fa-plus"></i>{{obj.typeev.type}}</td>
+    <td> <a  class="btn1" (click)="onClick()" >View Description</a></td>
+    <td>
+      <button class="btn btn-danger " (click)="Remove()"  >Delete</button> </td>
+      <div class="popup-view">
+        <div class="popup-card">
+          <a><i class="fas fa-times close-btn"></i></a>
+          <div class="info">
+
+            <h2>About {{obj.titre}} </h2>
+            <p>{{obj.descripton1}} </p>
+
+          </div>
+
+          </div>
+        </div>
+  </tr>
+
+</tbody>
+</table>
+
+
+
+
+
+<button class="load-more" (click)="onLoad()"  >
+  Load More  </button>

@@ -1,0 +1,126 @@
+<section>
+
+  <div class="imgbox">
+      <img class="w-100 banner-animation" [src]="user" >
+  </div>
+
+  <div class="right">
+      <div class="contact-box">
+          <h2>Add user</h2>
+          <form action="#" [formGroup]="userform" >
+            <div class="inputbox">
+          <span>Username</span>  <input    formControlName="username"   type="text"  class="field" name="company"    id="username" placeholder="Enter the username " required  ></div>
+          <div class="alert-danger" role="alert"  *ngIf="userform.controls['username']?.errors?.['required']" >
+         Username is required
+
+          </div>
+          <div class="inputbox">
+              <span>Fullname</span>  <input    formControlName="fullname" type="text"  class="field" name="fullname"      id="fullname" placeholder="Enter the fullname" required  ></div>
+              <div class="alert-danger" id="1" role="alert"  *ngIf="userform.controls['fullname']?.errors?.['required']" >
+              Fullname is required
+
+              </div>
+              <div class="inputbox">
+                <span>Phonenumber</span>  <input   formControlName="phonenumber" type="number"  class="field" name="phonenumber"      id="phonenumber" placeholder="Enter the phone number" required  ></div>
+                <div class="alert-danger" id="1" role="alert"  *ngIf="userform.controls['phonenumber']?.errors?.['required']" >
+               Phonenumber is required
+
+                </div>
+                <div class="inputbox">
+                  <span>Password</span>  <input    formControlName="password" type="password"  class="field" name="password"      id="password" placeholder="Enter the password" required  ></div>
+                  <div class="alert-danger" id="1" role="alert"  *ngIf="userform.controls['password']?.errors?.['required']" >
+                 Password is required
+
+                  </div>
+
+
+                  <div class="inputbox">
+                    <span>Birh date</span>  <input    formControlName="date_naiss" type="date"  class="field" name="date_naiss"      id="date_naiss" placeholder="Enter the password" required  ></div>
+                    <div class="alert-danger" id="1" role="alert"  *ngIf="userform.controls['date_naiss']?.errors?.['required']" >
+                 Birth date is required
+
+                    </div>
+
+          <div class="inputbox"><span>Email</span>  <input   formControlName="email" placeholder="Enter email"  id="email" required class="field"></div>
+          <div class="alert-danger" role="alert"  *ngIf="userform.controls['email']?.errors?.['required'] " >
+         Email is required
+
+          </div>
+          <div class="inputbox">
+            <span>Number of ROLE</span>  <input    formControlName="roleusers" type="number"  class="field" name="roleusers"      id="roleusers" placeholder="Enter the Role number" required  ></div>
+            <div class="alert-danger" id="1" role="alert"  *ngIf="userform.controls['roleusers']?.errors?.['required']" >
+          The Role is required
+<ol>
+<li>Admin</li>
+<li>Candidate</li>
+<li>Recruiter or Company</li>
+
+</ol>
+            </div>
+            <div class="inputbox">
+              <span>Number of Gender</span>  <input  formControlName="sexuser" type="number"  class="field" name="sexuser"      id="sexuser" placeholder="Enter the sexuser number" required  ></div>
+              <div class="alert-danger" id="1" role="alert"  *ngIf="userform.controls['sexuser']?.errors?.['required']" >
+            The Role is required
+  <ol>
+  <li>Male</li>
+  <li>Female</li>
+
+
+  </ol>
+              </div>
+          <div class="inputbox">
+
+            <button class="submit" >Add</button>
+        </div>
+      <!--       <div class="alert-danger" role="alert"  *ngIf="ContactForm.invalid && !ContactForm.pristine">
+             Errors occured during publish
+
+      </div>--></form>
+        </div>
+    </div>
+    </section>
+    <div class="sstitle1">
+      <p> Your List of Users</p>
+    </div>
+
+    <table class="table" id="table">
+      <thead class="thead-dark">
+        <tr>
+
+          <th scope="col" id="post">Fullname</th>
+          <th scope="col" id="company">Username</th>
+          <th scope="col" id="location">Email</th>
+          <th scope="col" id="Description">Phone number</th>
+          <th scope="col" id="action">Role</th>
+          <th scope="col" id="location">Actions</th>
+        </tr>
+      </thead>
+    <tbody class="tbody">
+
+      <tr *ngFor="let obj of us" >
+        <td><i class="fa fa-user"></i>{{obj.fullname}}</td>
+        <td><i class="fa fa-user"></i>{{obj.username}}</td>
+
+        <td><i class="fa fa-envelope"></i>{{obj.email}}</td>
+        <td><i class="fa fa-phone"></i>{{obj.phonenumber}}</td>
+        <td><i class="fa fa-user-secret"></i>{{obj.roleusers.role}}</td>
+
+        <td>
+          <button class="btn btn-danger " (click)="Remove(obj.id)"  >Delete</button> </td>
+
+      </tr>
+
+    </tbody>
+  </table>
+
+
+
+
+
+    <button class="load-more" (click)="onLoad()"  >
+      Load More  </button>
+
+
+
+
+

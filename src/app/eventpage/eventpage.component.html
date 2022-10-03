@@ -1,0 +1,51 @@
+
+    <div class="sstitle1">
+      <p> Our Events</p>
+    </div>
+    <div class="container">
+
+      <div class="box-container" *ngFor="let obj of ev">
+
+        <div class="box "   >
+           <div class="image">
+              <img [src]="festival" >
+           </div>
+           <div class="content">
+              <h3>{{obj.titre}}</h3>
+              <p>{{obj.descripton1}}</p>
+              <a  class="btn" (click)="onClick()">read more</a>
+              <div class="icons">
+                <span> <i class="fas fa-calendar"></i> {{obj.devent}}</span>
+                <span> <i class="fas fa-user"></i> {{obj.orga}} </span>
+             </div>
+
+           </div>
+        </div>
+        <div class="popup-view ">
+          <div class="popup-card">
+            <a><i class="fas fa-times close-btn"></i></a>
+            <div class="product-img">
+              <img [src]="festival">
+            </div>
+            <div class="info">
+              <h3>{{obj.titre}}</h3>
+              <p>{{obj.descripton1}} </p>
+
+              <i class="fa fa-solid  fa-star"></i>
+              <a href="#" class="add-cart-btn" (click)="onSave" >Save</a>
+
+            </div>
+          </div></div></div>
+          <button class="load-more" (click)="onLoad()" >
+            Load More  </button>  </div>
+
+
+
+
+
+
+
+
+
+
+

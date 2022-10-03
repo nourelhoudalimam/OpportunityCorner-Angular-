@@ -1,0 +1,92 @@
+<section>
+
+  <div class="imgbox">
+      <img class="w-100 banner-animation" [src]="tip"  >
+  </div>
+
+  <div class="right">
+      <div class="contact-box">
+          <h2>Add Tip</h2>
+          <form action="#" [formGroup]="tipform" (ngSubmit)="onAdd()" >
+
+          <div class="inputbox">
+              <span>Title</span>  <input [(ngModel)]="tipp.titrecons" #titrecons formControlName="titrecons" type="text"  class="field" name="titrecons"      id="titrecons" placeholder="Enter the Title" required  ></div>
+              <div class="alert-danger" id="1" role="alert"  *ngIf="tipform.controls['titrecons']?.errors?.['required']" >
+          Title is required
+
+              </div>
+
+
+
+
+
+
+          <div class="inputbox"><span>The tip</span>  <textarea  [(ngModel)]="tipp.contenu" #contenu  formControlName="contenu" placeholder="Enter Description" name="contenu" id="contenu" required class="field"></textarea></div>
+          <div class="alert-danger" role="alert"  *ngIf="tipform.controls['contenu']?.errors?.['required'] " >
+         Description is required
+
+          </div>
+
+          <div class="inputbox">
+
+            <button class="submit"  >Add</button>
+        </div>
+      <!--       <div class="alert-danger" role="alert"  *ngIf="ContactForm.invalid && !ContactForm.pristine">
+             Errors occured during publish
+
+      </div>--></form>
+        </div>
+    </div>
+    </section>
+    <div class="sstitle1">
+      <p> Your List of Tips</p>
+    </div>
+
+    <table class="table" id="table">
+      <thead class="thead-dark">
+        <tr>
+
+          <th scope="col" id="post">Title</th>
+          <th scope="col" id="company">Create Date</th>
+          <th scope="col" id="company">Description</th>
+          <th scope="col" id="location">Actions</th>
+
+        </tr>
+      </thead>
+    <tbody class="tbody">
+
+      <tr *ngFor="let obj of us" >
+        <td><i class="fa fa-star"></i>{{obj.titrecons}}</td>
+        <td><i class="fa fa-building"></i>{{obj.createDate}}</td>
+
+        <td> <a  class="btn1" (click)="onClick()" >View Description</a></td>
+        <td>
+          <button class="btn btn-danger " (click)="Remove(obj.idtip)"  >Delete</button> </td>
+          <div class="popup-view">
+            <div class="popup-card">
+              <a><i class="fas fa-times close-btn"></i></a>
+              <div class="info">
+
+                <h2>{{obj.titrecons}}</h2>
+                <p>{{obj.contenu}} </p>
+
+              </div>
+
+              </div>
+            </div>
+      </tr>
+
+    </tbody>
+  </table>
+
+
+
+
+
+    <button class="load-more" (click)="onLoad()" >
+      Load More  </button>
+
+
+
+
+

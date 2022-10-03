@@ -1,0 +1,219 @@
+section{
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    transform: translateY(90%);
+    margin-bottom: 600px;
+    
+}
+.w-100 { width: 100%;  }
+
+.banner-animation { animation: waveAnim 2s linear infinite alternate; }
+
+@keyframes waveAnim {
+  0% { transform: translate(0, 0) rotate(0); }
+  100% { transform: translate(2px, 2px) rotate(1deg); }
+}
+section .imgbox{
+    position: relative;
+    width:50%;
+    height:100%;
+    transform: translateY(-47%);
+}
+section .imgbox:before{
+    content:'';
+    position: absolute;
+   
+    width:100%;
+    height: 100%;
+   
+
+}
+section .imgbox img {
+    content:'';
+    position: absolute;
+   margin-top: 30px;
+    width:100% ;
+    height: 100%;
+    
+}
+section .right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    
+}
+section .right  .contact-box{
+    
+    width: 50%;
+    margin-bottom: 600px;
+    
+}
+
+section .right .contact-box  h2{
+    color: #607d8b;
+    font-weight: 600;
+    font-size: 1.65em;
+    transform: translate(5%,-150%);
+    align-items: center;
+    font-weight: bolder;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  position: relative;
+    display: inline-block;
+    letter-spacing: 1px;
+    
+}
+section  .right .contact-box h2:before{
+    content:'';
+    position:absolute;
+    left:0;
+    bottom:0;
+    height: 3px;
+    width: 60px;
+    background: #ff5360;
+}
+
+section .right .contact-box .inputbox{
+    
+    margin-top: 20px;
+   
+    
+}
+section .right .contact-box .inputbox span{
+   
+   font-size: 16px;
+   display: inline-block;
+   margin-bottom: 5px;
+margin-right: 30px;
+   color:#607d8b;
+   font-weight: 300;
+   letter-spacing: 1px;
+    }
+    section .right .contact-box .inputbox input{
+        outline: none;
+        display: flex;
+       
+        width: 90%;
+        padding: 10px 20px;
+        font-weight: 400;
+        border: 1px solid #607d8b;
+        letter-spacing: 1px;
+        background: transparent;
+        color:#607d8b;
+        border-radius: 30px;
+        font-size: 16px;
+        border-bottom-width: 2px;
+        transition: all 0.3s ease;
+    } 
+    section .right .contact-box .inputbox input:focus{
+        border-color:#575657; 
+    } 
+    section .right .contact-box .inputbox input:hover{
+        border-color:red; 
+    } 
+    .field{font-weight: 400;
+        border-radius: 30px;   border-bottom-width: 2px;
+        width: 90%;
+        border: 1px solid #607d8b;
+        outline: none;
+        display: flex;
+        background-color: transparent;
+        letter-spacing: 1px;
+        padding: 0.5rem 1rem;
+        font-size:16px;
+        margin-bottom: 22px;	padding: 90px 70px;
+        transition: all 0.3s ease;
+    }
+    .field:focus{
+        border-color:#575657;
+    }
+    .field:hover{
+        border-color:#2b272b; 
+    }
+    section .right .contact-box .inputbox .submit{
+        border: none;
+    outline: none;
+    background-color: #ff5360;
+    color: #fff;
+  
+    padding: 18px 32px;
+    font-weight: bold;
+    
+    width:30%;
+    margin-top: 40px;
+    margin-bottom: 100px;
+    letter-spacing: 1px;
+    margin-right: 50px;
+    border-radius: 30px;
+    transform: translateX(80%);
+    cursor: pointer;
+    transition: opacity 0.9;
+    }
+    .ng-invalid.ng.touched{
+        border-color: red;
+     }
+     .alert-danger {
+        outline: none;
+            display: flex;
+        
+            width: 90%;
+            padding: 10px 20px;
+            font-weight: 400;
+            border: 1px solid transparent;
+            letter-spacing: 1px;
+            background: transparent;
+            color:red;
+            border-radius: 30px;
+            font-size: 16px;
+            border-bottom-width: 2px;
+            transition: all 0.3s ease;
+      }
+    section .right .contact-box .inputbox .submit:hover{
+    
+        background-color:#fa3848;}
+    @media (max-width:768px)
+ {
+    section .imgbox{
+        position: absolute;
+        top:0;
+        left:0;
+        width: 60%;
+        height: 100%;
+        transform:translate(30%,-20%) ;
+    }
+    section .right{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+    section .right .contact-box{
+       
+        width: 100%;
+        margin:50px;
+        padding:40px;
+        background: rgb(255 255 255 /0.9);
+        
+    }
+ 
+    section .right  .contact-box h2{
+        color:#607d8b;
+        font-weight: bolder;
+        text-align: center;
+        margin:30px 0 10px;
+          transform: translateY(10%);  
+        font-size: 18px;}
+            section .right .contact-box .inputbox input[type="submit"]{
+      transform: translate(60%,-60%);
+      margin-top: 40px;
+            }
+            section .right .contact-box .inputbox  .submit{
+transform: translate(80%,-100%);
+   }
+         }

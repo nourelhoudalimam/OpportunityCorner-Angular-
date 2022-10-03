@@ -1,0 +1,20 @@
+<header class="header">
+
+    <a href="/home" class="logo"> <i class="fa fa-globe"></i> Opportunity<p>Corner</p> </a>
+ 
+    <nav class="navbar">
+        <a href="/home">Home</a>
+        <a href="/Offers">Offers</a>
+        <a href="/Companies">Companies</a>
+        <a href="/Tips">Tips</a>
+        <a href="/Events">Events</a>
+        <a class="button" (click)="onLogin()" href="/login" *ngIf="!isAuthentificated()">Login</a>
+        <a  class="button"  (click)="onSignUp()"  href="/Sign_up">Sign up</a>
+        <a  class="button"  (click)="Logout()" href="/Sign_up" *ngIf="isAuthentificated()" >Log out </a>
+    </nav>
+ 
+    <div id="menu-btn" class="fa fa-bars" (click)="onResp()">
+       
+    </div>
+ 
+ </header>

@@ -1,0 +1,147 @@
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 7rem;
+    scroll-behavior: smooth;
+}
+
+section{
+    padding:2rem 9%;
+    transform: translateY(5%);
+}
+.right img {
+    width:900px;
+
+    height:400px;
+    
+
+   
+}
+
+
+
+.title{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #707070;
+    font-size: 40px;
+    width: 100%;
+    font-weight:bolder;
+    margin-bottom: 20px;
+    transform: translateX(40%);
+}
+
+
+.questions-container{
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.questions{
+    border-bottom: 1px solid #fff;
+}
+.questions button{
+    width: 100%;
+    background-color: #e72939;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 15px;
+    border:none;
+    outline: none;
+    font-size: 22px;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+}
+.questions p{
+    font-size: 22px;
+    max-height: 0;
+    opacity: 0;
+    line-height: 1.5;
+    overflow: hidden;
+    transition: all 0.6s ease;
+}
+.questions p  a{
+    color:#707070;
+    font-weight:bold ;
+    text-decoration: underline;
+}
+.questions p a :hover{
+    color:#ff5360;
+}
+.d-arrow{
+    transition: transform 0.5s ease-in ;
+    color: #fff;
+}
+.w-100 { width: 100%;  }
+
+.banner-animation { animation: waveAnim 2s linear infinite alternate; }
+
+@keyframes waveAnim {
+  0% { transform: translate(0, 0) rotate(0); }
+  100% { transform: translate(2px, 2px) rotate(1deg); }
+}
+/*add this class when click*/
+.questions p.show {
+    max-height: 200px; 
+    opacity: 1;
+    padding:0px 15px 30px 15px;
+}
+.questions button .d-arrow.rotate{
+    transform: rotate(180deg);
+}
+.cta
+{
+    border: none;
+    outline: none;
+    background-color: #ff5360;
+    color: #fff;
+    padding: 18px 32px;
+    font-weight: bold;
+    transform: translateX(200%);
+    letter-spacing: 3px;
+    margin-top: 50px;
+    border-radius: 30px;
+    
+    cursor: pointer;
+    transition: opacity 0.9;
+}
+.cta:hover {
+    opacity: 0.9;
+    background-color: #e62031;
+   
+}
+
+@media (max-width: 768px) {
+    
+       
+        section {
+            padding-left:100px;
+            padding-right: 100px;
+        }
+    
+}
+@media (max-width: 991px) {
+
+    section{
+        padding:2rem;
+        
+    }
+    html{
+        font-size: 55%;
+    }
+
+    button.cta {
+        max-width: 60%;
+        font-size: 15px;
+        transform: translateX(65%);
+    }
+
+    
+}
+@media (max-width:450px){
+
+    html{
+        font-size: 55%
+    }
+}

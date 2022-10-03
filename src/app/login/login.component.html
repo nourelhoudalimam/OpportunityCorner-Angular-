@@ -1,0 +1,42 @@
+<section >
+    <div class="imgbox">
+        <img class="w-100 banner-animation" [src]="login" alt="login">
+    </div>
+    <div class="contentbox">
+        <div class="formbox">
+            <h2>login</h2>
+            <form [formGroup]="loginForm" >
+                <div class="inputbox">
+                    <span>E-mail</span>
+                    <input   required formControlName="email" type="email" name="email" class="form-control" id="email" >
+
+                </div>
+                <div class="alert-danger" role="alert"  *ngIf="loginForm.controls['email']?.errors?.['email']">
+                    Invalid E-mail
+
+                </div>
+                <div class="inputbox">
+                    <span>Password</span>
+                    <input  type="password" formControlName="password" required  minlength="5"  name="password" class="form-control" id="pwd">
+
+                </div>
+                 <div class="alert-danger" role="alert"  *ngIf="loginForm.controls['password'].errors">
+                    the password must have at least 5 characters
+
+                </div>
+                <div class="remember">
+                    <label ><input type="checkbox">Remember me</label>
+                </div>
+                <div class="inputbox">
+
+                    <input type="submit" [disabled]="!loginForm.valid" value="Sign in" >
+                </div>
+                <div class="inputbox">
+
+                   <p>Don't you have an account?    <a href="/Sign_up">Sign Up</a></p>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</section>

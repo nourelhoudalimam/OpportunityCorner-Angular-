@@ -1,0 +1,107 @@
+<section>
+    <div class="signupimg">
+        <img class="w-100 banner-animation" [src]="signup" alt="Registration">
+    </div>
+    <div class="signupbox">
+    <div class="leftbox">
+        <h2>Registration</h2>
+        <form action="#" #registerform="ngForm">
+            <div class="userdetails">
+                <div class="inbox">
+                <span class="details" > Full Name</span>
+                <input type="text"  [(ngModel)]="form.fullname" id="fullname" placeholder="Enter your Full Name" required #fName="ngModel">
+            </div>
+            <div class="alert-danger" role="alert"  *ngIf="fName?.errors?.['required'] && !registerform.pristine" >
+                Full name is required
+
+              </div>
+            <div class="inbox">
+                <span class="details"> Username</span>
+                <input type="text" placeholder="Enter your Username" [(ngModel)]="form.username" id="username" #uName="ngModel" required>
+            </div>
+            <div class="alert-danger" role="alert"  *ngIf="uName?.errors?.['required'] && !registerform.pristine" >
+                 Username is required
+
+              </div>
+            <div class="inbox">
+                <span class="details">Email</span>
+                <input pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" type="email" name="email" placeholder="Enter your E-mail" id="email" [(ngModel)]="form.email" #eName="ngModel" required>
+            </div>
+            <div class="alert-danger" role="alert"  *ngIf="eName?.errors?.['required'] && !registerform.pristine" >
+              E-mail is required
+
+            </div>
+            <div class="alert-danger" role="alert"  *ngIf="eName?.errors?.['pattern']" >
+                E-mail syntax error!
+              </div>
+            <div class="inbox">
+                <span class="details"> Phone</span>
+
+                <input type="number" placeholder="Enter your Phone Number" minlength="8"  id="phone" [(ngModel)]="form.phone" #phName="ngModel" required>
+            </div>
+            <div class="alert-danger" role="alert"  *ngIf="phName?.errors?.['required'] && !registerform.pristine" >
+                Phone number is required
+
+              </div>
+
+            <div class="inbox">
+                <span class="details"> Birth Date</span>
+                <input type="date" placeholder="Enter your Birth Date"  id="birth" [(ngModel)]="form.birth" #bName="ngModel" required>
+            </div>
+            <div class="inbox">
+                <span class="details"> Password</span>
+                <input pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" type="password" minlength="5" placeholder="Enter your Password" id="password" [(ngModel)]="form.password" #pName="ngModel" required>
+            </div>
+            <div class="alert-danger" role="alert"  *ngIf="pName.errors?.['required'] && !registerform.pristine">
+                the password is required
+
+            </div>
+            <div class="alert-danger" role="alert"  *ngIf="pName.errors?.['minlength']">
+                the password must be at least 5 characters!!
+
+            </div>
+            <div class="inbox">
+                <span class="details">Confirm your Password</span>
+                <input type="password" placeholder="Confirm your Password " required>
+            </div>
+        </div>
+        <div class="dropdown"><span>Gender</span>
+          <button class="dropbtn">Select</button>
+          <div class="dropdown-content">
+            <p>Male</p>   <p>Female</p>
+          </div>
+        </div>
+        <div class="dropdown">
+          <span>Role</span>
+          <button class="dropbtn">select</button>
+          <div class="dropdown-content">
+            <p>Recruiter</p>   <p>Candidate</p>
+          </div>
+        </div>
+        <div class="alert-danger" role="alert"  *ngIf="registerform.invalid && !registerform.pristine">
+            Errors occured during validation
+
+        </div>
+        <div class="register">
+            <input type="submit"  [disabled]="!registerform.valid" value="Register">
+        </div>
+
+        <div class="or">OR</div>
+        <div class="social">
+            <span class="signin">Sing in with Social Network</span>
+
+
+            <button class="facebook">
+               <i class="fa fa-facebook" aria-hidden="true"></i>
+                Login with Facebook</button>
+            <button class="Google">
+             <i class="fa fa-google" aria-hidden="true"></i>
+                Login with Google</button>
+        </div>
+
+        </form>
+
+    </div>
+</div>
+
+</section>
