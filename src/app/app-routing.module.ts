@@ -85,7 +85,7 @@ const routes: Routes = [
   },
   {
     path:'Recruiter_access',component:RecruiterComponent
-  },{path:'Admin_space',component:AdminComponent},
+  },{path:'Admin_space',component:AdminComponent},{path:'Candidat',component:CandidatComponent},
   {
     path:'Candidate_access',component:CandComponent
   },{path:'Companies',component:CompaniesComponent},{path:'offers_list',component:OfferlistComponent},{path:'list_apps',component:ListappComponent},{path:'create_offer',component:OffercreateComponent}
@@ -96,6 +96,6 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponents=[AdminComponent, CandEventComponent,CandPostuleComponent,CandTipsComponent,RecrEventsComponent,RecrTipsComponent,NavbarComponent,AdminCompaniesComponent,AdminEventsComponent,AdminTipsComponent,AdminuserComponent,FormulairepostComponent, RecruiterComponent,
+export const routingComponents=[AdminComponent,CandidatComponent, CandEventComponent,CandPostuleComponent,CandTipsComponent,RecrEventsComponent,RecrTipsComponent,NavbarComponent,AdminCompaniesComponent,AdminEventsComponent,AdminTipsComponent,AdminuserComponent,FormulairepostComponent, RecruiterComponent,
  ListappComponent,OffercreateComponent,OfferlistComponent, CandComponent,ContactComponent,FAQComponent,CompaniesComponent,HeaderComponent,SignupComponent,FooterComponent,TipspageComponent,TermsComponent,EventpageComponent,SpecComponent,LoginComponent,FootComponent];
 

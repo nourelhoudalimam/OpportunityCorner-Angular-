@@ -48,9 +48,9 @@ onRecruiter(){
   this.router.navigateByUrl('/Recruiter_access');
 }
 onCandidate(){
-  this.router.navigateByUrl('/Candidate_access');
+  this.router.navigateByUrl('/Candidat');
 }
 
-  
+
 }
 
